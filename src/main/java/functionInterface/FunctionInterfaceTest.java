@@ -3,6 +3,7 @@ package functionInterface;
 import common.enums.SexyEnum;
 import functionInterface.VO.People;
 import functionInterface.service.MyFunctionInterface;
+import functionInterface.service.NoReturnMultiParam;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,6 +38,7 @@ public class FunctionInterfaceTest {
 
         System.out.println(filters);
 
+        // test VO
         List<People> filterPeoples = peoples
                 .stream()
                 .filter(people -> checkPeople(people, m -> m.getAge() > 25 ))
@@ -44,6 +46,35 @@ public class FunctionInterfaceTest {
 
         System.out.println(filterPeoples);
 
+        // test Function
+        testFunction();
+    }
+
+    private static void testFunction() {
+
+        NoReturnMultiParam noReturnMultiParam = new NoReturnMultiParam() {
+            @Override
+            public void method(int a, int b) {
+                System.out.println("a + b: " + (a + b));
+            }
+        };
+        // noReturnMultiParam.method(1, 2);
+
+        /*functionToMethod(1, 2, new NoReturnMultiParam() {
+            @Override
+            public void method(int a, int b) {
+                System.out.println(a + b);
+            }
+        });*/
+
+        functionToMethod(1, 2, (a, b) -> {
+            System.out.println(1 + 2);
+        });
+
+    }
+
+    private static void functionToMethod(int a, int b, NoReturnMultiParam noReturnMultiParam) {
+        noReturnMultiParam.method(a, b);
     }
 
 }

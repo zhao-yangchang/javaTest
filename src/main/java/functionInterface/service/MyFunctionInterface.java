@@ -4,3 +4,4 @@ package functionInterface.service;
 public interface MyFunctionInterface<T> {
     boolean test(T t);
 }
+
