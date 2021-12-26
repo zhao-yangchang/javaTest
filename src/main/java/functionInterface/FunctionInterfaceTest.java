@@ -1,9 +1,8 @@
 package functionInterface;
 
 import common.enums.SexyEnum;
-import functionInterface.VO.People;
+import common.VO.PeopleVO;
 import functionInterface.service.MyFunctionInterface;
-import functionInterface.service.NoReturnMultiParam;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,11 +10,11 @@ import java.util.stream.Collectors;
 
 public class FunctionInterfaceTest {
 
-    private static List<People> peoples = Arrays.asList(
-            new People("zhangsan", 25, SexyEnum.MAN.getCode()),
-            new People("lisi", 23, SexyEnum.MAN.getCode()),
-            new People("xiaohong", 20, SexyEnum.WOMAN.getCode()),
-            new People("xiaosao", 27, SexyEnum.WOMAN.getCode())
+    private static List<PeopleVO> peopleVOS = Arrays.asList(
+            new PeopleVO("zhangsan", 25, SexyEnum.MAN.getCode()),
+            new PeopleVO("lisi", 23, SexyEnum.MAN.getCode()),
+            new PeopleVO("xiaohong", 20, SexyEnum.WOMAN.getCode()),
+            new PeopleVO("xiaosao", 27, SexyEnum.WOMAN.getCode())
     );
 
     private static boolean check(Integer i, MyFunctionInterface<Integer> m) {
@@ -24,7 +23,7 @@ public class FunctionInterfaceTest {
 
     }
 
-    private static boolean checkPeople(People p, MyFunctionInterface<People> m) {
+    private static boolean checkPeople(PeopleVO p, MyFunctionInterface<PeopleVO> m) {
         return m.test(p);
     }
 
@@ -39,42 +38,13 @@ public class FunctionInterfaceTest {
         System.out.println(filters);
 
         // test VO
-        List<People> filterPeoples = peoples
+        List<PeopleVO> filterPeopleVOS = peopleVOS
                 .stream()
-                .filter(people -> checkPeople(people, m -> m.getAge() > 25 ))
+                .filter(peopleVO -> checkPeople(peopleVO, m -> m.getAge() > 25 ))
                 .collect(Collectors.toList());
 
-        System.out.println(filterPeoples);
+        System.out.println(filterPeopleVOS);
 
-        // test Function
-        testFunction();
-    }
-
-    private static void testFunction() {
-
-        NoReturnMultiParam noReturnMultiParam = new NoReturnMultiParam() {
-            @Override
-            public void method(int a, int b) {
-                System.out.println("a + b: " + (a + b));
-            }
-        };
-        // noReturnMultiParam.method(1, 2);
-
-        /*functionToMethod(1, 2, new NoReturnMultiParam() {
-            @Override
-            public void method(int a, int b) {
-                System.out.println(a + b);
-            }
-        });*/
-
-        functionToMethod(1, 2, (a, b) -> {
-            System.out.println(1 + 2);
-        });
-
-    }
-
-    private static void functionToMethod(int a, int b, NoReturnMultiParam noReturnMultiParam) {
-        noReturnMultiParam.method(a, b);
     }
 
 }

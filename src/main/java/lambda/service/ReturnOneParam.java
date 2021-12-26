@@ -1,4 +1,4 @@
-package functionInterface.service;
+package lambda.service;
 
 @FunctionalInterface
 public interface ReturnOneParam {
