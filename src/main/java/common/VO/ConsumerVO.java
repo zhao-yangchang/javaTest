@@ -29,6 +29,21 @@ public class ConsumerVO {
             target = new ConsumerVO();
         }
 
+        public builder setName(String name) {
+            target.setName(name);
+            return this;
+        }
+
+        public builder setAge(int age) {
+            target.setAge(age);
+            return this;
+        }
+
+        public builder setBehavior(String behavior) {
+            target.setBehavior(behavior);
+            return this;
+        }
+
         public builder set(Consumer<ConsumerVO> consumer) {
             consumer.accept(target);
             return this;

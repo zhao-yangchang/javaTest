@@ -10,8 +10,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * @ClassName FunctionTest
- * @Description Function 函数式接口 test
+ * @ClassName Function2Test
+ * @Description Function 函数式接口 test2
  * @Author zhaoyangchang
  * @Date 2021/12/30 下午5:12
  * @Version 1.0.0

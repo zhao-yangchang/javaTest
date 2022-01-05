@@ -9,6 +9,13 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * @ClassName FunctionTest
+ * @Description Function test
+ * @Author zhaoyangchang
+ * @Date 2021/12/20 上午11:50
+ * @Version 1.0.0
+ */
 public class FunctionTest {
 
     private static List<PeopleVO> peopleVOS = Arrays.asList(

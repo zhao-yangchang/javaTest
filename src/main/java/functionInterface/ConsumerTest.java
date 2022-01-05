@@ -8,6 +8,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
+/**
+ * @ClassName ConsumerTest
+ * @Description Consumer Test
+ * @Author zhaoyangchang
+ * @Date 2021/12/20 上午11:50
+ * @Version 1.0.0
+ */
 public class ConsumerTest {
 
     private static List<PeopleVO> peopleVOList = Arrays.asList(
@@ -62,6 +69,14 @@ public class ConsumerTest {
                         vo2 -> System.out.println(vo2.getAge() + " years old.")
                 ));
 
+        // general builder
+        ConsumerVO generalBilder = new ConsumerVO
+                .builder()
+                .setName("xiaosao")
+                .setAge(25)
+                .setBehavior("sexing")
+                .builder();
+
         // Consumer升级
         ConsumerVO consumerVO = new ConsumerVO
                 .builder()
@@ -70,6 +85,8 @@ public class ConsumerTest {
                 .set(vo -> vo.setBehavior("shopping"))
                 .builder();
         System.out.println(consumerVO);
+
+
 
     }
 

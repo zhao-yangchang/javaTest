@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 /**
  * @ClassName FunctionInterfaceTest
- * @Description TODO
+ * @Description 函数式接口Test
  * @Author zhaoyangchang
  * @Date 2021/12/20 上午11:50
  * @Version 1.0.0
