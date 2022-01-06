@@ -12,7 +12,7 @@ import java.util.function.Consumer;
  * @ClassName ConsumerTest
  * @Description Consumer Test
  * @Author zhaoyangchang
- * @Date 2021/12/20 上午11:50
+ * @Date 2022/01/05 下午11:50
  * @Version 1.0.0
  */
 public class ConsumerTest {
