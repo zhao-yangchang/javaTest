@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 /**
  * @ClassName SupplierTest
- * @Description Supplier Test
+ * @Description Supplier 供给型 Test
  * @Author zhaoyangchang
  * @Date 2022/01/06 下午11:30
  * @Version 1.0.0

@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 
 /**
  * @ClassName ConsumerTest
- * @Description Consumer Test
+ * @Description Consumer 消费性 Test
  * @Author zhaoyangchang
  * @Date 2022/01/05 下午11:50
  * @Version 1.0.0
