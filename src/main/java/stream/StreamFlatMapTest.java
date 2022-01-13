@@ -32,6 +32,13 @@ public class StreamFlatMapTest {
 
     public static void main(String[] args) {
 
+        // map
+        List<String> mapList = list1
+                .stream()
+                .map(s -> s + "| map")
+                .collect(Collectors.toList());
+        System.out.println(mapList);
+
         // 将复合的集合扁平化
         List<Integer> flatI = intStream
                 .flatMap(Collection::stream)
