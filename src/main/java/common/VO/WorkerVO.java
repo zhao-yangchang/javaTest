@@ -1,5 +1,6 @@
 package common.VO;
 
+import common.enums.AreaEnum;
 import lombok.Data;
 
 import java.util.Arrays;
@@ -20,23 +21,29 @@ public class WorkerVO extends PeopleVO{
      */
     private Integer salary;
 
-    public WorkerVO(Integer salary) {
-        this.salary = salary;
+    /**
+     * 地区
+     */
+    private String area;
+
+    public WorkerVO() {
     }
 
-    public WorkerVO(String name, Integer age, int sex, Integer salary) {
+    public WorkerVO(String name, Integer age, int sex, Integer salary, String area) {
         super(name, age, sex);
         this.salary = salary;
+        this.area = area;
     }
 
     public static List<WorkerVO> getWorkers() {
         return Arrays.asList(
-                new WorkerVO("zhangsan", 24, 1, 10000),
-                new WorkerVO("lisi", 28, 1, 8500),
-                new WorkerVO("wangwu", 25, 1, 15000),
-                new WorkerVO("xiaohong", 22, 2, 9500),
-                new WorkerVO("xiaosao", 26, 2, 12000),
-                new WorkerVO("xiaonai", 24,  2, 11000)
+                new WorkerVO("zhangsan", 24, 1, 10000, AreaEnum.CHINA.getDesc()),
+                new WorkerVO("lisi", 28, 1, 8500, AreaEnum.CHINA.getDesc()),
+                new WorkerVO("wangwu", 25, 1, 15000, AreaEnum.AMERICA.getDesc()),
+                new WorkerVO("xiaohong", 22, 2, 9500, AreaEnum.CHINA.getDesc()),
+                new WorkerVO("xiaosao", 26, 2, 12000, AreaEnum.AMERICA.getDesc()),
+                new WorkerVO("xiaonai", 24,  2, 11000, AreaEnum.AMERICA.getDesc()),
+                new WorkerVO("sorted", 30,  2, 15000, AreaEnum.CHINA.getDesc())
         );
     }
 
