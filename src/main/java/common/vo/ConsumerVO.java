@@ -1,6 +1,5 @@
-package common.VO;
+package common.vo;
 
-import lombok.Builder;
 import lombok.Data;
 
 import java.util.function.Consumer;

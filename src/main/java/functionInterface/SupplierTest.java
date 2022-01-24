@@ -1,7 +1,7 @@
 package functionInterface;
 
-import common.VO.PeopleVO;
-import common.VO.SupplierVO;
+import common.vo.PeopleVO;
+import common.vo.SupplierVO;
 import common.enums.SexyEnum;
 
 import java.util.Optional;

@@ -1,6 +1,6 @@
 package functionInterface;
 
-import common.VO.PeopleVO;
+import common.vo.PeopleVO;
 import org.springframework.beans.BeanUtils;
 
 import java.util.Comparator;

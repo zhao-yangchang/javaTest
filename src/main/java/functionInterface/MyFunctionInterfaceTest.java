@@ -1,6 +1,6 @@
 package functionInterface;
 
-import common.VO.PeopleVO;
+import common.vo.PeopleVO;
 import common.enums.SexyEnum;
 import functionInterface.service.MyFunctionInterface;
 

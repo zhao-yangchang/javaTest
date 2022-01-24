@@ -1,7 +1,7 @@
 package lambda;
 
-import common.VO.AnimalVO;
-import common.VO.PeopleVO;
+import common.vo.AnimalVO;
+import common.vo.PeopleVO;
 import lambda.service.PeopleConstruct;
 import lambda.service.TConstruct;
 
@@ -33,5 +33,5 @@ public class VOContructTest {
     public static PeopleVO getPeopleVO(String name, int age, int sexy) {
         return new PeopleVO(name, age, sexy);
     }
-    
+
 }

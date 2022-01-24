@@ -1,6 +1,6 @@
 package stream;
 
-import common.VO.WorkerVO;
+import common.vo.WorkerVO;
 
 import java.util.List;
 

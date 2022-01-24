@@ -1,7 +1,7 @@
 package stream;
 
-import common.VO.PeopleVO;
-import common.VO.WorkerVO;
+import common.vo.PeopleVO;
+import common.vo.WorkerVO;
 
 import java.util.List;
 import java.util.stream.Collectors;

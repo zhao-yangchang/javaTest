@@ -1,9 +1,8 @@
 package stream;
 
-import common.VO.PeopleVO;
+import common.vo.PeopleVO;
 import common.enums.SexyEnum;
 
-import javax.swing.*;
 import java.util.List;
 import java.util.Optional;
 

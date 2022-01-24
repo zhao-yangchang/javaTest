@@ -1,6 +1,6 @@
 package functionInterface;
 
-import common.VO.PeopleVO;
+import common.vo.PeopleVO;
 
 import java.util.Arrays;
 import java.util.List;
