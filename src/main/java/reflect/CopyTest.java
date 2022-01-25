@@ -1,11 +1,16 @@
 package reflect;
 
 import common.vo.WorkerVO;
+import org.springframework.beans.BeanUtils;
+import org.springframework.util.StringUtils;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @ClassName CopyTest
@@ -38,22 +43,32 @@ public class CopyTest<T> {
 
         System.out.println(object);
         Class aClass = object.getClass();
-        List<Field> fields = Arrays.asList(aClass.getDeclaredFields());
+        Class superClass = aClass.getSuperclass();
+        List<Field> subFields = Arrays.asList(aClass.getDeclaredFields());
+        List<Field> superFields = Arrays.asList(superClass.getDeclaredFields());
+
+        List<Field> fields = Stream.concat(Stream.of(subFields), Stream.of(superFields))
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
+        System.out.println(fields);
+
         Object resObj = aClass.getConstructor(new Class[]{}).newInstance(new Object[]{});
         fields
                 .stream()
                 .forEach(field -> {
                     field.setAccessible(true);
                     String name = field.getName();
-                    System.out.println(name);
                     try {
                         System.out.println(field.get(resObj));
+                        Object param = field.get(object);
+                        field.set(resObj, param);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 });
+        System.out.println(resObj);
 
-        return t;
+        return resObj;
     }
 
 }
