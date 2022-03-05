@@ -1,6 +1,7 @@
 package stream;
 
 import common.vo.WorkerVO;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,9 +13,11 @@ import java.util.stream.Collectors;
  * @description: reducing
  * @date 2022/1/16 10:41 下午
  */
+@Slf4j
 public class ReducingTest {
 
     private static List<WorkerVO> workerVOS = WorkerVO.getWorkers();
+
 
     public static void main(String[] args) {
 
@@ -22,7 +25,8 @@ public class ReducingTest {
         Integer sumSalary1 = workerVOS
                 .stream()
                 .collect(Collectors.reducing(0, WorkerVO::getSalary, (i1, i2) -> i1 + i2));
-        System.out.println(sumSalary1);
+        // System.out.println(sumSalary1);
+        log.info("reduce: {}", sumSalary1);
 
         // reduce
         Integer sumSalary2 = workerVOS
