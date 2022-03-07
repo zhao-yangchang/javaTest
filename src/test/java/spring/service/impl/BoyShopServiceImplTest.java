@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import spring.service.ShopService;
 
-import javax.annotation.Resource;
 
 @SpringBootTest
 @Slf4j
