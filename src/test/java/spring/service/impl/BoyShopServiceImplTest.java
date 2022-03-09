@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
-import spring.service.ShopService;
+import zyc.javaTest.spring.service.ShopService;
 
 
 @SpringBootTest
