@@ -20,6 +20,7 @@
         <maven.compiler.target>8</maven.compiler.target>
         <springframework.boot.version>2.2.3.RELEASE</springframework.boot.version>
         <logback.version>1.1.11</logback.version>
+        <redis.clients.version>2.9.1</redis.clients.version>
     </properties>
 
     <!-- 定义本项目的依赖关系 -->
@@ -57,11 +58,6 @@
             <artifactId>lombok</artifactId>
             <version>1.18.6</version>
         </dependency>
-        <!--<dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>-->
         <!-- spring boot test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -87,11 +83,6 @@
             <!--scope包含如下的取值：compile（编译范围）、provided（已提供范围）、runtime（运行时范围）、test（测试范围）、system（系统范围） -->
             <scope>test</scope>
         </dependency>
-        <!--<dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.25</version>
-        </dependency>-->
 
         <!-- logback日志配置开始 -->
         <dependency>
@@ -110,6 +101,15 @@
             <version>1.7.7</version>
         </dependency>
         <!-- logback日志配置结束 -->
+
+        <!-- jedis -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${redis.clients.version}</version>
+        </dependency>
+
+
     </dependencies>
 
     <!-- 构建配置 -->
