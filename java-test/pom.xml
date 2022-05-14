@@ -60,32 +60,29 @@
             <artifactId>spring-boot-starter-aop</artifactId>
             <version>${springframework.boot.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.experimental</groupId>
-            <artifactId>spring-native</artifactId>
-            <version>${spring-native.version}</version>
-        </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
+            <version>${springframework.boot.version}</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <version>${springframework.boot.version}</version>
         </dependency>
         <!-- Junit -->
         <dependency>
@@ -97,24 +94,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- logback日志配置开始 -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>${logback.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>log4j-over-slf4j</artifactId>
-            <version>1.7.7</version>
-        </dependency>
-        <!-- logback日志配置结束 -->
-
         <!-- jedis -->
         <dependency>
             <groupId>redis.clients</groupId>
@@ -125,7 +104,7 @@
 
     <build>
         <!-- 产生的构件的文件名，默认值是${artifactId}-${version}。 -->
-        <!--<finalName>javaTest</finalName>-->
+        <finalName>java-test</finalName>
 
         <!-- 构建产生的所有文件存放的目录,默认为${basedir}/target，即项目根目录下的target -->
         <!--<directory>${basedir}/target</directory>-->
