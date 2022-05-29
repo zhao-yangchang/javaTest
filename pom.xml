@@ -3,17 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <!-- 模型版本。maven2.0必须是这样写，现在是maven2唯一支持的版本 -->
+    <!-- 父项目 -->
     <parent>
-        <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.6.7</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <modules>
-        <module>java-test</module>
-        <module>redis-springboot</module>
-    </modules>
     <!-- 公司或者组织的唯一标志，并且配置时生成的路径也是由此生成， 如com.winner.trade，maven会将该项目打成的jar包放本地路径：/com/winner/trade -->
     <groupId>com.zhaoyc.test</groupId>
     <!-- 本项目的唯一ID，一个groupId下面可能多个项目，就是靠artifactId来区分的 -->
@@ -22,6 +17,13 @@
     <version>1.0-SNAPSHOT</version>
     <!-- 打包的机制，如pom,jar, maven-plugin, ejb, war, ear, rar, par，默认为jar -->
     <!--<packaging>jar</packaging>-->
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>java-test</module>
+        <module>redis-springboot</module>
+        <module>spring-boot-initial</module>
+    </modules>
 
     <!-- 为pom定义一些常量，在pom中的其它地方可以直接引用 使用方式 如下 ：${file.encoding} -->
     <properties>
@@ -34,6 +36,27 @@
 
     <!-- 定义本项目的依赖关系 -->
     <dependencies>
+
+        <!-- spring-boot-starter 所有spring-boot的依赖都以此开头 -->
+
+        <!-- web依赖：tomcat、dispatcherServlet、xml... -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- 单元测试 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine:5.5.2</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
         <!-- apache.common 系列包 -->
         <dependency>
@@ -137,6 +160,7 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
+            <!-- 打包工具 -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
