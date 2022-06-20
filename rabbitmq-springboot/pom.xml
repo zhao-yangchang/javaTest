@@ -27,17 +27,24 @@
 
 		<!-- rabbitmq 相关依赖 -->
 		<!-- rabbitMq 连接 -->
-		<dependency>
+		<!--<dependency>
 			<groupId>com.rabbitmq</groupId>
 			<artifactId>amqp-client</artifactId>
-			<version></version>
-		</dependency>
+			<version>5.13.1</version>
+		</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- spring boot-mq 依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
