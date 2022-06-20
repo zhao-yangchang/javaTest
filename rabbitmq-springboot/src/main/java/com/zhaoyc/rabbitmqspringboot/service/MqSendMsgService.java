@@ -19,7 +19,7 @@ public class MqSendMsgService {
     private AmqpTemplate amqpTemplate;
 
     /**
-     * 发送消息
+     * 发送消息 字符串、字节数组、序列化对象
      * @param msg
      */
     public void sendMsg(String msg) {
