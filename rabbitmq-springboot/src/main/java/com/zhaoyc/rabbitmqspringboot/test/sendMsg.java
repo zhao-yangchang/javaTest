@@ -1,5 +1,6 @@
 package com.zhaoyc.rabbitmqspringboot.test;
 
+import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.zhaoyc.rabbitmqspringboot.utils.ConnectionUtil;
@@ -25,6 +26,18 @@ public class sendMsg {
         try (Connection connection = ConnectionUtil.getConnection()) {
             // 相当于JDBC操作的statement
             Channel channel = connection.createChannel();
+
+            // 定义订阅交换机
+            channel.exchangeDeclare("exchange_fanout", BuiltinExchangeType.FANOUT);
+            // 定义路由交换机
+            channel.exchangeDeclare("exchange_derect", BuiltinExchangeType.DIRECT);
+
+            // 绑定队列
+            // 参数1：队列名称
+            // 参数2：目标交换机
+            // 参数3：如果绑定订阅交换机，参数为""；如果绑定路由交换机则表示路由key
+            channel.queueBind("queue_test", "exchange_fanout", "");
+            channel.queueBind("queue_test", "exchange_direct", "a");
 
             // 定义队列（在MQ中新建一个队列）
             // 参数1：队列的名称
