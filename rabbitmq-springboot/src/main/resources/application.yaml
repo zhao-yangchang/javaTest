@@ -9,3 +9,10 @@ spring:
     virtual-host: host1
     username: admin
     password: admin123
+    # 开庆消息确认模式
+    # none 无
+    # simple 简单模式 简单消息确认
+    # correlated
+    publisher-confirm-type: simple
+    # 开启return监听机制
+    publisher-returns: true
